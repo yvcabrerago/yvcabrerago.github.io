@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.16630f23.css",
-    "main.js": "/static/js/main.68cc86f6.js",
+    "main.css": "/static/css/main.6e56b0b8.css",
+    "main.js": "/static/js/main.1960888b.js",
     "static/media/robot.png": "/static/media/robot.6c1e8d96b4e388ec45a6.png",
+    "static/media/milleverbi_app.webp": "/static/media/milleverbi_app.c57609850a63ce9da15c.webp",
     "static/media/google-play-badge.png": "/static/media/google-play-badge.f902960a94878ee0da67.png",
     "index.html": "/index.html",
-    "main.16630f23.css.map": "/static/css/main.16630f23.css.map",
-    "main.68cc86f6.js.map": "/static/js/main.68cc86f6.js.map"
+    "main.6e56b0b8.css.map": "/static/css/main.6e56b0b8.css.map",
+    "main.1960888b.js.map": "/static/js/main.1960888b.js.map"
   },
   "entrypoints": [
-    "static/css/main.16630f23.css",
-    "static/js/main.68cc86f6.js"
+    "static/css/main.6e56b0b8.css",
+    "static/js/main.1960888b.js"
   ]
 }
