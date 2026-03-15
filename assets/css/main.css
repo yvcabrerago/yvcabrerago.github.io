@@ -3081,6 +3081,7 @@ body.is-touch .tiles article .content {
   opacity: 1;
   background-color: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh;
 }
 
 #menu {
@@ -3506,4 +3507,16 @@ body.is-menu-visible #menu .close {
 }
 .checkbox {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(:has(.checkbox)) #wrapper {
+    --text-color: var(--dark-text);
+    --bg-color: var(--dark-bg);
+    --footer-bg-color: var(--dark-footer-bg);
+    --copyright-color: var(--dark-copyright);
+    --border-color: var(--dark-border);
+    --border-subtle-color: var(--dark-border-subtle);
+    --icon-border-color: var(--dark-icon-border);
+  }
 }

@@ -26,6 +26,11 @@
   <body class="is-preload">
     <input type="checkbox" id="theme-switch" class="checkbox" />
     <label for="theme-switch" class="switch"></label>
+    <script>
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.getElementById('theme-switch').checked = true;
+      }
+    </script>
 
     <!-- Wrapper -->
     <div id="wrapper">
