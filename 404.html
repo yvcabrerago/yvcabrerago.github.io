@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Generic - Phantom by HTML5 UP</title>
+	<title>404</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
@@ -34,7 +34,6 @@
 			<div class="inner">
 				<h1>404</h1>
 				<h3>Sorry, we don't have the page you were looking for, but here is a random phrase instead.</h3>
-				<!-- <span class="image main"><img src="images/pic13.jpg" alt="" /></span> -->
 				<div>
 					<p class="quotes" id="quote"></p>
 					<p class="quotes" id="author"></p>
@@ -54,11 +53,10 @@
 	<script src="assets/js/main.js"></script>
 	<script>
 		async function logJSONData() {
-			const response = await fetch("https://api.quotable.io/quotes/random");
+			const response = await fetch("https://dummyjson.com/quotes/random");
 			const jsonData = await response.json();
-			console.log(jsonData[0])
-			document.getElementById("quote").innerHTML = "<i>" + jsonData[0].content + "<i>";
-			document.getElementById("author").innerHTML = jsonData[0].author;
+			document.getElementById("quote").innerHTML = "<i>" + jsonData.quote + "<i>";
+			document.getElementById("author").innerHTML = jsonData.author;
 		}
 		logJSONData();
 	</script>
