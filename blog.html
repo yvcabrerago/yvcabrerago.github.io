@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="en">
+
+<head>
+	<title>Miniblog - Yunior Cabrera</title>
+	<meta charset="utf-8" />
+	<meta name="description"
+		content="Yunior Cabrera's miniblog - thoughts on software engineering, technology, and more." />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/blog.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+</head>
+
+<body class="is-preload">
+	<input type="checkbox" id="theme-switch" class="checkbox" />
+	<label for="theme-switch" class="switch"></label>
+	<script>
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.getElementById('theme-switch').checked = true;
+		}
+	</script>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<main id="main">
+			<div class="inner">
+				<header class="blog-header">
+					<a href="index.html" class="blog-back">&larr; Back</a>
+					<h1>miniblog</h1>
+					<p>Thoughts, notes, and things I find interesting.</p>
+				</header>
+
+				<hr class="blog-divider" />
+
+				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
+					<time datetime="2026-03-15">March 15, 2026</time>
+					<h2><a href="#til-quirkiness-of-c-cpp">TIL: Quirkiness of C|C++</a></h2>
+					<p>
+						<a href="https://en.wikipedia.org/wiki/Digraphs_and_trigraphs_(programming)">Digraphs!</a> A
+						legacy of C, inherited by C++, that, back in the day, was useful for writing some correct,
+						although pretty obscure code due to some constraints on characters like '# { } [ ]'. Let's
+						take a look at the following hello,
+						world! program:
+					</p>
+					<pre><code class="language-cpp">%:include&lt;iostream&gt;
+
+using namespace std;
+
+int main()
+<%
+    cout << "hello, world!" << std::endl;
+    return 0;
+%>
+</code></pre>
+					<p>Pretty cool, right? Trigraph also exists but they are disabled on most compilers by default.
+						Please don't use it in production code.</p>
+				</article>
+			</div>
+		</main>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-cpp.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+</body>
+
+</html>
