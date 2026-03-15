@@ -1,0 +1,76 @@
+.blog-header {
+  margin-bottom: 1em;
+}
+
+.blog-header h1 {
+  margin-bottom: 0.2em;
+}
+
+.blog-header p {
+  margin-top: 0;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 1.5em;
+  font-size: 0.9em;
+  border-bottom: none !important;
+}
+
+.blog-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2.5em 0;
+}
+
+.blog-entry time {
+  display: block;
+  font-size: 0.8em;
+  font-family: monospace;
+  opacity: 0.6;
+  margin-bottom: 0.5em;
+}
+
+.blog-entry h2 {
+  font-size: 1.3em;
+  font-weight: 900;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.blog-entry h2 a {
+  color: inherit;
+  border-bottom: none !important;
+}
+
+.blog-entry h2 a:hover::after {
+  content: ' #';
+  opacity: 0.4;
+}
+
+.blog-entry p {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.blog-entry pre[class*="language-"] {
+  border-radius: 4px;
+  margin: 1em 0;
+}
+
+.blog-entry pre code {
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+.blog-entry code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85em;
+  background-color: var(--footer-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 0.15em 0.4em;
+}
