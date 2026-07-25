@@ -47,6 +47,23 @@
 
 				<hr class="blog-divider" />
 
+				<article class="blog-entry" id="quine">
+					<time datetime="2026-07-24">July 24, 2026</time>
+					<h2><a href="#quine">Quine</a></h2>
+					<p>
+						A quine is a program that outputs its own source code. There is something magical (or perhaps
+						unsettling) about a program creating itself. Here is one in C#:
+					<pre><code class="language-cs">var s = """
+var s = ""{1}
+{0}
+""{1};
+System.Console.WriteLine(string.Format(s, s, (char)34));
+""";
+System.Console.WriteLine(string.Format(s, s, (char)34));
+</code></pre>
+					</p>
+				</article>
+				</br>
 				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
 					<time datetime="2026-04-10">April 10, 2026</time>
 					<h2><a href="#til-quirkiness-of-c-cpp">On naming</a></h2>
