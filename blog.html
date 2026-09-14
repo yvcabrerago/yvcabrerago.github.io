@@ -47,6 +47,41 @@
 
 				<hr class="blog-divider" />
 
+				<article class="blog-entry" id="screensaver">
+					<time datetime="2026-09-14">September 14, 2026</time>
+					<h2><a href="#screensaver">Screensavers</a></h2>
+					<p>
+						Back when I was a child, I was fascinated by screensavers, now a relic from the past. Imagine my
+						surprise when I discovered (just recently, I must admit) that behind the scenes, a .scr file is
+						just a Windows executable!
+					</p>
+					<img src="images/starfield_file.png" alt="file description of src file" />
+					<p>
+						Well, that means that I could create my own screensaver, right? I just need to create a GUI app
+						that renders fullscreen. Technically yes, but it needs to support some arguments so it can
+						play nicely with the Control Panel configuration utility, namely /s for fullscreen mode, /c for
+						configuration, and /p for the preview mode.
+						<br />
+						We can ignore the /s if we make the app render on fullscreen by default. To keep things simple,
+						we only show a message dialog for /c indicating that we don't support configuration. /p is a
+						little more complicated, as it involves getting a window handle and doing some wiring to
+						make it work (that is, showing a preview of the screensaver on the Control Panel utility).
+						<br />
+						The next step is to decide what to render. We can try to replicate the now-missing
+						<a href="https://microsoft.fandom.com/wiki/Starfield">Starfield screensaver</a>.
+					</p>
+					<img src="images/starfield.gif" alt="Starfield GIF" />
+					<p>
+						This effect is based on projecting the 3D coordinates of each star onto
+						a 2D plane using the following equations, while decreasing the Z value (the star's depth) on
+						each iteration:
+					<pre><code class="language-c">star_x = star.X / star.Z + SCREEN_WIDTH / 2;
+star_y = star.Y / star.Z + SCREEN_HEIGHT / 2;</code></pre>
+					And that is pretty much the gist of it. Full code can be found on the <a
+						href="https://github.com/yvcabrerago/starfield">GitHub repository</a>.
+					</p>
+				</article>
+				<br />
 				<article class="blog-entry" id="quine">
 					<time datetime="2026-07-24">July 24, 2026</time>
 					<h2><a href="#quine">Quine</a></h2>
@@ -63,7 +98,7 @@ System.Console.WriteLine(string.Format(s, s, (char)34));
 </code></pre>
 					</p>
 				</article>
-				</br>
+				<br />
 				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
 					<time datetime="2026-04-10">April 10, 2026</time>
 					<h2><a href="#til-quirkiness-of-c-cpp">On naming</a></h2>
@@ -80,7 +115,7 @@ System.Console.WriteLine(string.Format(s, s, (char)34));
 						Next time, think twice before sticking a name on something.
 					</p>
 				</article>
-				</br>
+				<br />
 				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
 					<time datetime="2026-03-15">March 15, 2026</time>
 					<h2><a href="#til-quirkiness-of-c-cpp">TIL: Quirkiness of C|C++</a></h2>
