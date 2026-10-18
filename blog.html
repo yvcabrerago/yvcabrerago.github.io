@@ -47,6 +47,41 @@
 
 				<hr class="blog-divider" />
 
+				<article class="blog-entry" id="til-dotnet-caches-timezone">
+					<time datetime="2026-10-18">October 18, 2026</time>
+					<h2><a href="#til-dotnet-caches-timezone">TIL: .NET caches the local time zone</a></h2>
+					<p>
+						After spending some time trying to figure out why one of our apps wasn't working, I stumbled
+						upon the fact that .NET caches the time zone <a
+							href="https://source.dot.net/#System.Private.CoreLib/src/runtime/src/libraries/System.Private.CoreLib/src/System/TimeZoneInfo.cs,66">(avoiding
+							reading from /etc/localtime on Linux every time a conversion is needed).</a>
+						This is easy to verify with this short snippet:
+					</p>
+					<pre><code class="language-cs">using static System.Console;
+
+while(true) {
+        WriteLine($"Current time: {DateTime.Now}");
+        WriteLine($"TimeZone: {TimeZoneInfo.Local.Id}");
+        WriteLine($"UtcNow: {DateTime.UtcNow}");
+        WriteLine(new string('-', 15));
+        await Task.Delay(5_000);
+}
+</code></pre>
+					<p>
+						After changing the time zone of the system, DateTime.Now and TimeZoneInfo.Local.Id keep
+						returning the same values as before.
+						<br />
+						Solution? Well, the recommendation is to always work in UTC, but if for some
+						reason your code depends on the time zone, and restarting the app is not possible, just call <a
+							href="https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.clearcacheddata?view=net-10.0">TimeZoneInfo.ClearCachedData()</a>.
+						It could be combined with <a
+							href="https://learn.microsoft.com/en-us/dotnet/api/system.io.filesystemwatcher?view=net-10.0">FileSystemWatcher</a>
+						(if you are using Linux and the environment variable TZ is not set) to only clear when a
+						change is detected.
+					</p>
+				</article>
+
+				<br />
 				<article class="blog-entry" id="screensaver">
 					<time datetime="2026-09-14">September 14, 2026</time>
 					<h2><a href="#screensaver">Screensavers</a></h2>
@@ -81,6 +116,7 @@ star_y = star.Y / star.Z + SCREEN_HEIGHT / 2;</code></pre>
 						href="https://github.com/yvcabrerago/starfield">GitHub repository</a>.
 					</p>
 				</article>
+
 				<br />
 				<article class="blog-entry" id="quine">
 					<time datetime="2026-07-24">July 24, 2026</time>
@@ -98,10 +134,11 @@ System.Console.WriteLine(string.Format(s, s, (char)34));
 </code></pre>
 					</p>
 				</article>
+
 				<br />
-				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
+				<article class="blog-entry" id="on-naming">
 					<time datetime="2026-04-10">April 10, 2026</time>
-					<h2><a href="#til-quirkiness-of-c-cpp">On naming</a></h2>
+					<h2><a href="#on-naming">On naming</a></h2>
 					<p>
 						Naming is the eternal struggle of every software developer. Naming is hard, really hard, and not
 						only for variables, methods, or classes, but also for processes and methodologies.
@@ -115,6 +152,7 @@ System.Console.WriteLine(string.Format(s, s, (char)34));
 						Next time, think twice before sticking a name on something.
 					</p>
 				</article>
+
 				<br />
 				<article class="blog-entry" id="til-quirkiness-of-c-cpp">
 					<time datetime="2026-03-15">March 15, 2026</time>
